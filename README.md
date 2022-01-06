@@ -3,7 +3,7 @@
 Aplikacija koja služi za pregled muzeja i rezervacija istih. Nudi mogućnost pregleda slika muzeja i objavljivanje od strane korisnika u galeriji.
 
 ### Autori i zaduženja
-**Natali Flego** (nflego@unipu.hr) -   
+**Natali Flego** (nflego@unipu.hr) -  implementacija modula za galeriju, UI komponente
  **Lucija Josipović Deranja** (lderanja@unipu.hr) - implementacija modula za rezervaciju, UI komponente
 
 ### Prototip aplikacije
