@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav id="nav" class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <font-awesome-icon icon="fa-solid fa-house" class="ikona" />
+        <router-link to="/">&nbsp;L'Arte</router-link>
+      </a>
+      <router-link to="/">REZERVACIJE</router-link>
+      <router-link to="/galerija">GALERIJA</router-link>
+      <router-link to="/kontakt">KONTAKT</router-link>
+      <br />
+    </nav>
+    <br />
+    <router-view />
   </div>
 </template>
 
@@ -29,4 +36,14 @@
     }
   }
 }
+
+.ikona {
+  position: relative;
+}
+.ikona font-awesome-icon {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
 </style>
+
