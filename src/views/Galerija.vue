@@ -36,7 +36,15 @@
     <div class="zakomentare">
       <div class="spoj1">
         <div class="purple"></div>
-        <div class="dugi1"></div>
+        <div class="dugi1">
+          <input type="text" placeholder="Dodaj komentar..." class="kom" />
+        </div>
+      </div>
+      <div class="spoj2">
+        <div class="plavi"></div>
+        <div class="dugi2">
+          <input type="text" class="kom" />
+        </div>
       </div>
     </div>
 
@@ -90,5 +98,34 @@ body#p2 {
 .iplus {
   margin: 42px;
   color: rgb(195, 56, 9);
+}
+.spoj1 {
+  display: flex;
+  margin: 25px;
+}
+.kom {
+  border-radius: 25px;
+  border-color: rgb(217, 205, 126);
+  background-color: rgb(217, 205, 126);
+  height: 50px;
+  margin-top: 13px;
+}
+.purple {
+  border-radius: 50px;
+  background-color: #5f083a;
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
+}
+.spoj2 {
+  display: flex;
+  margin: 25px;
+}
+.plavi {
+  border-radius: 50px;
+  background-color: #8661ff;
+  width: 70px;
+  height: 70px;
+  margin-right: 30px;
 }
 </style>
