@@ -1,5 +1,94 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <body id="p2">
+    <div class="zagaleriju">
+      <div class="prikaz">
+        <div class="img2">
+          <img src="zaslike/slika3.jpg" style="height: 300px" />
+        </div>
+        <div class="img2">
+          <img src="zaslike/slika4.jpg" style="height: 300px" />
+        </div>
+        <div class="img2">
+          <img src="zaslike/slika5.jpg" style="height: 300px" />
+        </div>
+        <div class="img2">
+          <img src="zaslike/slika6.jpg" style="height: 300px" />
+        </div>
+        <div class="gumb">
+          <font-awesome-icon icon="fa-solid fa-plus " class="iplus" />
+        </div>
+      </div>
+    </div>
+
+    <div class="t1">
+      <p>Podijeli svoje dojmove</p>
+    </div>
+    <hr
+      style="
+        width: 19%;
+        text-align: left;
+        margin-left: 0;
+        border-color: black;
+        margin-left: 15px;
+      "
+    />
+
+    <div class="zakomentare">
+      <div class="spoj1">
+        <div class="purple"></div>
+        <div class="dugi1"></div>
+      </div>
+    </div>
+
+    <br /><br /><br />
+  </body>
 </template>
+
+
+<style>
+body#p2 {
+  background-color: hsl(116, 32%, 49%);
+  padding: 25px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+.zagaleriju {
+  border-radius: 25px;
+  background: rgb(235, 239, 116);
+  padding: 20px;
+  width: 100%;
+  height: 350px;
+}
+.zakomentare {
+  border-radius: 25px;
+  background: rgb(235, 239, 116);
+  padding: 25px;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+}
+.t1 {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  margin: 35px;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 12px;
+}
+.prikaz {
+  display: flex;
+}
+.img2 {
+  padding: 5px;
+}
+.gumb {
+  border-radius: 50px;
+  background-color: rgb(237, 140, 71);
+  width: 100px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 40px;
+}
+.iplus {
+  margin: 42px;
+  color: rgb(195, 56, 9);
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav id="nav" class="navbar navbar-light bg-light">
+    <nav id="nav" class="navbar">
       <a class="navbar-brand" href="#">
         <font-awesome-icon icon="fa-solid fa-house" class="ikona" />
         <router-link to="/">&nbsp;L'Arte</router-link>
@@ -25,11 +25,11 @@
 }
 
 #nav {
-  padding: 30px;
-
+  padding: 20px;
+  background-color: black;
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    font-weight: 300;
+    color: white;
 
     &.router-link-exact-active {
       color: #42b983;
