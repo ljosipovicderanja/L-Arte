@@ -14,9 +14,11 @@
         <div class="img2">
           <img src="zaslike/slika6.jpg" style="height: 300px" />
         </div>
-        <div class="gumb">
-          <font-awesome-icon icon="fa-solid fa-plus " class="iplus" />
-        </div>
+        <router-link :to="{ name: 'Prijava' }">
+          <div class="gumb">
+            <font-awesome-icon icon="fa-solid fa-plus " class="iplus" />
+          </div>
+        </router-link>
       </div>
     </div>
 
@@ -55,7 +57,7 @@
 
 <style>
 body#p2 {
-  background-color: hsl(116, 32%, 49%);
+  background-color: rgba(133, 198, 93, 1);
   padding: 25px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
