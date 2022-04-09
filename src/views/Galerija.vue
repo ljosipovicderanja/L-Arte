@@ -1,5 +1,5 @@
 <template>
-  <body id="p2">
+  <body id="p2"><br><br>
     <div class="zagaleriju">
       <div class="prikaz">
         <div class="img2">
@@ -131,3 +131,17 @@ body#p2 {
   margin-right: 30px;
 }
 </style>
+
+<script>
+import store from "@/store";
+store.stanje=0;
+export default {
+data: function() {
+return {
+        store,
+        };
+        
+    },
+}
+
+</script>

@@ -1,17 +1,19 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Rezervacije from '../views/Rezervacije.vue'
-import Kontakt from '../views/Kontakt.vue'
-import Galerija from '../views/Galerija.vue'
-import Prijava from '../views/Prijava.vue'
+import Pocetna from '../views/Pocetna.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
+    name: 'Pocetna',
+    component: Pocetna
+  },
+  {
+    path: '/rezervacije',
     name: 'Rezervacije',
-    component: Rezervacije
+    component: () => import('../views/Rezervacije.vue')
   },
   {
     path: '/galerija',
@@ -27,7 +29,12 @@ const routes = [
     path: '/prijava',
     name: 'Prijava',
     component: () => import('../views/Prijava.vue')
-  }
+  },
+  {
+    path: '/registracija',
+    name: 'Registracija',
+    component: () => import('../views/Registracija.vue')
+  },
 ]
 
 const router = new VueRouter({

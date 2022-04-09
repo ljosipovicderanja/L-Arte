@@ -1,5 +1,6 @@
 <template>
-  <body id="p3">
+  <div class="pozadina">
+    <br /><br />
     <div class="bijeli">
       <br />
       <h1>PRIJAVA</h1>
@@ -23,27 +24,35 @@
         <input type="submit" value="POTVRDI" class="potvrdi" />
       </div>
     </div>
-  </body>
+  </div>
 </template>
 
 <style>
-body#p3 {
-  background-color: rgba(133, 198, 93, 1);
-  padding: 25px;
+.pozadina{
+  width: 100%;
+  height: 100%;
+  background-color: #7E0000;
   font-family: Avenir, Helvetica, Arial, sans-serif;
+  background-attachment: fixed;
+  position: absolute;
+}
+body#p3 {
+  
+  padding: 25px;
+  
   color: rgb(0, 0, 0);
-  padding-top: 100px;
-  padding-bottom: 100px;
+  height:100%;
 }
 .bijeli {
   background-color: rgb(255, 255, 255);
-  height: 500px;
+  height: 550px;
   margin: 20px;
   border-radius: 40px;
   margin: auto;
   width: 40%;
   /*border: 3px solid #73ad21;*/
   padding: 10px;
+  margin-top: 80px;
 }
 h1 {
   text-align: center;
@@ -72,3 +81,17 @@ h1 {
   margin-top: 70px;
 }
 </style>
+
+<script>
+import store from "@/store";
+store.stanje=0;
+export default {
+data: function() {
+return {
+        store,
+        };
+        
+    },
+}
+
+</script>
