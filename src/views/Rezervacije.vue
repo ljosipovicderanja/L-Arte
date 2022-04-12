@@ -1,86 +1,82 @@
 <template>
   <div class="home-page">
     <div class="containerr">
-      
-        <div class="centerr">
-            <div class="poravnaj-text">
-              <p class="text1">Postani korisnik</p>
-              <p class="text2">Korisnik</p>
-            </div>
-        <router-link to="/registracija"><img class="img img-left" src="zaslike/slika2.jpg" /></router-link>
-        
-        <router-link to="/prijava"><img class="img" src="zaslike/slika1.jpg" /></router-link>
+      <div class="centerr">
+        <div class="poravnaj-text"></div>
+        <div class="respon">
+          <div class="text1">postani korisnik</div>
+          <router-link to="/registracija"
+            ><img class="img" src="zaslike/slika2.jpg"
+          /></router-link>
+
+          <div class="text2">korisnik</div>
+          <router-link to="/prijava"
+            ><img class="img" src="zaslike/slika11.jpg"
+          /></router-link>
         </div>
       </div>
+    </div>
   </div>
 </template>
 
 
 <style>
 .home-page {
-  background-color: #7E0000;
+  background-color: #7e0000;
   width: 100%;
   height: 100%;
   background-attachment: fixed;
   position: absolute;
   z-index: -1;
 }
-.poravnaj-text{
-
+.poravnaj-text {
 }
 .containerr {
-  width:100%;
+  width: 100%;
   display: flex;
   box-sizing: border-box;
-  background-color: #7E0000;
-  margin:auto;
+  background-color: #7e0000;
+  margin: auto;
 }
 .img {
-  
   justify-content: center;
   align-items: center;
   padding: 20px;
-  height:400px;
-  width:400px;
+  height: 400px;
+  width: 450px;
   border-radius: 125px;
 }
 .text1 {
-  position:absolute;
+  position: absolute;
   color: white;
-  margin-left: 150px;
-  margin-bottom: 10px;
 }
 .text2 {
-  position:absolute;
+  position: absolute;
   color: white;
-  margin-left: 670px;
-  margin-bottom: 10px;
 }
-.centerr{
+.centerr {
   display: flex;
-  margin:auto;
-  margin-top:220px;
-}
-
-.img-left{
-  margin-right:100px;
+  margin: auto;
+  margin-top: 220px;
 }
 
 body#b1 {
   background-color: blueviolet;
 }
+.respon {
+  width: 100%;
+  height: auto;
+}
 </style>
 
 <script>
 import store from "@/store";
-store.stanje=0;
+store.stanje = 0;
 export default {
-data: function() {
-return {
-        store,
-        };
-        
-    },
-}
-
+  data: function () {
+    return {
+      store,
+    };
+  },
+};
 </script>

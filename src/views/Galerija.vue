@@ -58,7 +58,7 @@
 <style>
 body#p2 {
   background-color: rgba(133, 198, 93, 1);
-  padding: 25px;
+  padding: 50px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 .zagaleriju {
