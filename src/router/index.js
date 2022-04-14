@@ -39,6 +39,26 @@ const routes = [
     path: '/muzeji',
     name: 'Muzeji',
     component: () => import('../views/Muzeji.vue')
+  },
+  {
+    path: 'louvre',
+    name: 'Louvre',
+    component: () => import('../views/Louvre.vue')
+  },
+  {
+    path: 'orsay',
+    name: 'Orsay',
+    component: () => import('../views/Orsay.vue')
+  },
+  {
+    path: 'palais',
+    name: 'Palais',
+    component: () => import('../views/Palais.vue')
+  },
+  {
+    path: 'vangogh',
+    name: 'Vangogh',
+    component: () => import('../views/Vangogh.vue')
   }
 ]
 
