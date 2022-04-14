@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <div v-if="store.stanje==0">
-    <nav id="nav" class="navbar">
-      <a class="navbar-brand" href="#">
-        <font-awesome-icon icon="fa-solid fa-house" class="ikona" />
-        <router-link to="/rezervacije">&nbsp;L'Arte</router-link>
-      </a>
-      <router-link to="/rezervacije">REZERVACIJE</router-link>
-      <router-link to="/galerija">GALERIJA</router-link>
-      <router-link to="/kontakt">KONTAKT</router-link>
-      <br />
-    </nav>
+    <div v-if="store.stanje == 0">
+      <nav id="nav" class="navbar">
+        <a class="navbar-brand">
+          <router-link to="/muzeji">
+            <font-awesome-icon icon="fa-solid fa-house" class="ikona"
+          /></router-link>
+          <router-link to="/muzeji">&nbsp;L'Arte</router-link>
+        </a>
+        <router-link to="/rezervacije">REZERVACIJE</router-link>
+        <router-link to="/galerija">GALERIJA</router-link>
+        <router-link to="/kontakt">KONTAKT</router-link>
+        <br />
+      </nav>
     </div>
-    
+
     <router-view />
   </div>
 </template>
@@ -29,9 +31,9 @@
 #nav {
   padding: 20px;
   background-color: black;
-  position:absolute;
-  width:100%;
-  z-index:99;
+  position: absolute;
+  width: 100%;
+  z-index: 99;
   a {
     font-weight: 300;
     color: white;
@@ -55,13 +57,10 @@
 import store from "@/store";
 
 export default {
-data: function() {
-return {
-        store,
-        };
-        
-    },
-  
-}
-
+  data: function () {
+    return {
+      store,
+    };
+  },
+};
 </script>

@@ -1,5 +1,6 @@
 <template>
-  <body id="p2"><br><br>
+  <body id="p2">
+    <br /><br />
     <div class="zagaleriju">
       <div class="prikaz">
         <div class="img2">
@@ -38,9 +39,11 @@
     <div class="zakomentare">
       <div class="spoj1">
         <div class="purple"></div>
-        <div class="dugi1">
-          <input type="text" placeholder="Dodaj komentar..." class="kom" />
-        </div>
+        <router-link :to="{ name: 'Prijava' }">
+          <div class="dugi1">
+            <input type="text" placeholder="Dodaj komentar..." class="kom" />
+          </div>
+        </router-link>
       </div>
       <div class="spoj2">
         <div class="plavi"></div>
@@ -134,14 +137,12 @@ body#p2 {
 
 <script>
 import store from "@/store";
-store.stanje=0;
+store.stanje = 0;
 export default {
-data: function() {
-return {
-        store,
-        };
-        
-    },
-}
-
+  data: function () {
+    return {
+      store,
+    };
+  },
+};
 </script>

@@ -2,17 +2,18 @@
   <div class="home-page">
     <div class="containerr">
       <div class="centerr">
-        <div class="poravnaj-text"></div>
-        <div class="respon">
-          <div class="text1">postani korisnik</div>
-          <router-link to="/registracija"
-            ><img class="img" src="zaslike/slika2.jpg"
-          /></router-link>
+        <div class="poravnaj-text">
+          <div class="respon">
+            <div class="text1">Postani korisnik</div>
+            <router-link to="/registracija"
+              ><img class="img" src="zaslike/slika2.jpg"
+            /></router-link>
 
-          <div class="text2">korisnik</div>
-          <router-link to="/prijava"
-            ><img class="img" src="zaslike/slika11.jpg"
-          /></router-link>
+            <div class="text2">Korisnik</div>
+            <router-link to="/prijava"
+              ><img class="img" src="zaslike/slika11.jpg"
+            /></router-link>
+          </div>
         </div>
       </div>
     </div>
@@ -30,6 +31,7 @@
   z-index: -1;
 }
 .poravnaj-text {
+  padding: 20px;
 }
 .containerr {
   width: 100%;
