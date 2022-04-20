@@ -9,7 +9,7 @@
       </div>
 
       <div class="crni1">
-        <router-link :to="{ name: 'Orsay' }">
+        <router-link to="/orsay">
           <img src="zaslike/orsay.jpg" />
           <h1>MUZEJ D'ORSAY</h1>
         </router-link>

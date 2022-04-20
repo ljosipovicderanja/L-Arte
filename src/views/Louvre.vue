@@ -1,6 +1,6 @@
 <template>
   <div class="svijetlo-smedi">
-    <img src="zaslike/slika11.jpg" />
+    <br /><br /><br /><br /><br />
     <h1>MUZEJ LOUVRE</h1>
   </div>
 </template>
