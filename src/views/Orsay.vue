@@ -10,23 +10,29 @@
           <img src="zaslike/orsay2.jpg" style="height: 450px; width: 550px" />
         </div>
         <div class="pocetneslike">
-          <img src="zaslike/orsay3.jpg" style="height: 450px; width: 500px" />
+          <img src="zaslike/orsay3.jpg" style="height: 450px; width: 486px" />
         </div>
 
         <div class="centered">MUZEJ D'ORSAY</div>
         <div class="centered1">MUZEJ D'ORSAY</div>
       </div>
+      <br /><br />
+      <div class="zatekst">
+        <p>
+          Povijest muzeja (njegove zgrade) prilično je neobična. U središtu
+          Pariza na obali Seine, nasuprot vrtova Tuileries, muzej je postavljen
+          u <br />bivšoj željezničkoj stanici Orsay, izgrađenoj za Univerzalnu
+          izložbu 1900. Tako se sama zgrada mogla smatrati prvim "umjetničkim
+          djelom". <br />u Musee d'Orsay, koji prikazuje zbirke umjetnina iz
+          razdoblja od 1848. do 1914. godine.
+        </p>
+      </div>
       <br />
-      <!--
-      <p>
-        Povijest muzeja (njegove zgrade) prilično je neobična. U središtu Pariza
-        na obali Seine, nasuprot vrtova Tuileries, muzej je postavljen u bivšoj
-        željezničkoj stanici Orsay, izgrađenoj za Univerzalnu izložbu 1900. Tako
-        se sama zgrada mogla smatrati prvim "umjetničkim djelom". u Musee
-        d'Orsay, koji prikazuje zbirke umjetnina iz razdoblja od 1848. do 1914.
-        godine.
-      </p>
-      -->
+      <div class="za-balu">
+        <div class="bala1"></div>
+        <div class="bala"></div>
+        <div class="bala3"></div>
+      </div>
     </div>
   </body>
 </template>
@@ -46,10 +52,6 @@ body {
 .container-za-slike {
   display: flex;
   height: 210px;
-}
-
-.zanaslov {
-  background-color: rgb(65, 47, 23);
 }
 .centered {
   position: absolute;
@@ -71,6 +73,38 @@ body {
   transform: translate(-50%, -50%);
   font-weight: bold;
   font-size: 40px;
+}
+.zatekst {
+  text-align: center;
+  margin-top: 280px;
+  font-weight: bold;
+}
+.bala1 {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(240, 242, 229);
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+.bala {
+  height: 30px;
+  width: 30px;
+  background-color: rgb(240, 242, 229);
+  border-radius: 25px;
+  margin-left: 20px;
+}
+.bala3 {
+  height: 20px;
+  width: 20px;
+  background-color: rgb(240, 242, 229);
+  border-radius: 25px;
+  margin-left: 20px;
+  margin-top: 7px;
+}
+.za-balu {
+  display: flex;
+  margin-left: 700px;
 }
 </style>
 <script>
