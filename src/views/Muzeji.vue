@@ -2,26 +2,26 @@
   <div class="pozadina">
     <div class="vodoravno">
       <div class="crni1">
-        <router-link to="/louvre">
+        <router-link :to="{ name: 'Louvre' }">
           <img src="zaslike/louvre.jpg" />
           <h1>LOUVRE</h1>
         </router-link>
       </div>
 
       <div class="crni1">
-        <router-link to="/orsay">
+        <router-link :to="{ name: 'Orsay' }">
           <img src="zaslike/orsay.jpg" />
           <h1>MUZEJ D'ORSAY</h1>
         </router-link>
       </div>
       <div class="crni1">
-        <router-link to="/palais">
+        <router-link :to="{ name: 'Palais' }">
           <img src="zaslike/palais.jpg" />
           <h1>GRAND PALAIS</h1>
         </router-link>
       </div>
       <div class="crni1">
-        <router-link to="/vangogh">
+        <router-link :to="{ name: 'Vangogh' }">
           <img src="zaslike/van-gogh11.jpg" />
           <h1>MUZEJ VAN GOGH</h1>
         </router-link>
@@ -66,6 +66,7 @@ h1 {
 import store from "@/store";
 store.stanje = 0;
 export default {
+  name: "Muzeji",
   data: function () {
     return {
       store,

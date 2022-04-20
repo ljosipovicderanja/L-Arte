@@ -75,6 +75,7 @@ body#b1 {
 import store from "@/store";
 store.stanje = 0;
 export default {
+  name: "Rezervacije",
   data: function () {
     return {
       store,

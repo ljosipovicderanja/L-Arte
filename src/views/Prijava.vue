@@ -28,20 +28,19 @@
 </template>
 
 <style>
-.pozadina{
+.pozadina {
   width: 100%;
   height: 100%;
-  background-color: #7E0000;
+  background-color: #7e0000;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   background-attachment: fixed;
   position: absolute;
 }
 body#p3 {
-  
   padding: 25px;
-  
+
   color: rgb(0, 0, 0);
-  height:100%;
+  height: 100%;
 }
 .bijeli {
   background-color: rgb(255, 255, 255);
@@ -84,14 +83,13 @@ h1 {
 
 <script>
 import store from "@/store";
-store.stanje=0;
+store.stanje = 0;
 export default {
-data: function() {
-return {
-        store,
-        };
-        
-    },
-}
-
+  name: "Prijava",
+  data: function () {
+    return {
+      store,
+    };
+  },
+};
 </script>

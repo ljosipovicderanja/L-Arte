@@ -41,22 +41,22 @@ const routes = [
     component: () => import('../views/Muzeji.vue')
   },
   {
-    path: 'louvre',
+    path: '/louvre',
     name: 'Louvre',
     component: () => import('../views/Louvre.vue')
   },
   {
-    path: 'orsay',
+    path: '/orsay',
     name: 'Orsay',
     component: () => import('../views/Orsay.vue')
   },
   {
-    path: 'palais',
+    path: '/palais',
     name: 'Palais',
     component: () => import('../views/Palais.vue')
   },
   {
-    path: 'vangogh',
+    path: '/vangogh',
     name: 'Vangogh',
     component: () => import('../views/Vangogh.vue')
   }
