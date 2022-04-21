@@ -58,7 +58,7 @@
 </template>
 
 
-<style>
+<style >
 body#p2 {
   background-color: rgba(133, 198, 93, 1);
   padding: 50px;

@@ -5,6 +5,7 @@
         <div class="poravnaj-text">
           <div class="respon">
             <div class="text1">Postani korisnik</div>
+            <br />
             <router-link to="/registracija"
               ><img class="img" src="zaslike/slika2.jpg"
             /></router-link>
@@ -31,7 +32,7 @@
   z-index: -1;
 }
 .poravnaj-text {
-  padding: 20px;
+  padding: 10px;
 }
 .containerr {
   width: 100%;
@@ -51,6 +52,7 @@
 .text1 {
   position: absolute;
   color: white;
+  margin-left: 11em;
 }
 .text2 {
   position: absolute;
@@ -59,7 +61,7 @@
 .centerr {
   display: flex;
   margin: auto;
-  margin-top: 220px;
+  margin-top: 200px;
 }
 
 body#b1 {
