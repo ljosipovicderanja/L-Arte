@@ -146,7 +146,7 @@ body {
   height: 200%;
   background-attachment: fixed;
   position: absolute;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 .container-za-slike {
   display: flex;
