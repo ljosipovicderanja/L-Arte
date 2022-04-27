@@ -2,15 +2,18 @@
   <div class="home-page">
     <div class="containerr">
       <div class="centerr">
-        <div class="poravnaj-text">
           <div class="respon">
-            <div class="text1">Postani korisnik</div>
+            <div class="korisnik-tekst">
+              <div class="postani-korisnik">Postani korisnik</div>
+              
+              <div class="korisnik">Korisnik</div>
+            </div>
             <br />
             <router-link to="/registracija"
               ><img class="img" src="zaslike/slika2.jpg"
             /></router-link>
 
-            <div class="text2">Korisnik</div>
+            
             <router-link to="/prijava"
               ><img class="img" src="zaslike/slika11.jpg"
             /></router-link>
@@ -18,7 +21,7 @@
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 
@@ -31,9 +34,7 @@
   position: absolute;
   z-index: -1;
 }
-.poravnaj-text {
-  padding: 10px;
-}
+
 .containerr {
   width: 100%;
   display: flex;
@@ -49,14 +50,16 @@
   width: 450px;
   border-radius: 125px;
 }
-.text1 {
+.postani-korisnik {
   position: absolute;
   color: white;
   margin-left: 11em;
 }
-.text2 {
+.korisnik {
   position: absolute;
   color: white;
+  float: right;
+  margin-left: 40.5em;
 }
 .centerr {
   display: flex;
