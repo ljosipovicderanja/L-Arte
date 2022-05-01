@@ -58,6 +58,7 @@
                     background-color: rgb(188, 201, 176);
                   "
                 /><br /><br />
+                <p v-if="empty_fields" class="alert_message">Unesite sva polja!</p>
                 <p v-if="less_char" class="alert_message">Unesite najmanje 6 znakova!</p>
                 <p v-if="success_register" class="success_message">Uspješna registracija!</p>
               </div>
@@ -134,6 +135,7 @@ export default {
       broj_telefona: "",
       less_char: false,
       success_register: null,
+      empty_fields: null,
     };
   },
   methods: {
@@ -144,6 +146,12 @@ export default {
       else{
         this.less_char=false;
       }
+      /*if (this.ime==='' || this.prezime==='' || this.email==='' || this.password==='' || this.datum_rodenja==='' || mjesto_stanovanja==='' || broj_telefona===''){
+          this.empty_fields==true
+        }
+      else {
+        this.empty_fields==false
+      }*/
       try {
       console.log("ulazim", firebase)
       
@@ -253,103 +261,6 @@ h1 {
   margin-top: 70px;
 }
 
-
-/* Registracija responzivna */
-
-
-.container {
- max-width: 800px;
- width: 100%;
- margin: 0 auto;
-}
-#contact {
- background-color: rgba(220, 255, 66, 0.7);
- padding: 20px;
- margin: 50px 0;
-}
-#contact input, button {
- font: 400 15px 'Open Sans', sans-serif, helvetica, Arial;
-}
-#contact h1 {
- font-size: 35px;
- font-weight: bold;
- text-align: center;
- color: blue;
-}
-#contact h3 {
- margin: 5px 0px 15px;
- text-align: center;
-}
-.row {
- display: flex;
- width: 100% !important;
- padding: 20px 0px;
-}
-.row .column {
- margin: 0px 20px;
- width: 50%;
-}
-fieldset {
- border: medium none !important;
- margin:  0 0 10px;
- min-width: 100%;
- width: 100%;
-}
-#contact input {
- width: 100%;
- border: 1px solid rgb(150, 150, 150);
- background-color: white;
- padding: 10px;
- margin: 5px 0;
-}
-input[type = "radio"] {
- width: 10% !important;
-}
-#contact .row .radio {
- border: 1px solid rgb(150, 150, 150);
- background-color: white;
- margin: 7px 0 10px;
- padding: 5px;
-}
-#contact .row .idCard{
- display: flex;
- height: 45px !important;
- margin: 5px 0;
-}
-#contact .row .idCard :first-child {
- width: 80px;
-}
-#contact .row .idCard :last-child {
- width: 40px;
-}
-#contact .row #phone {
- max-width: 100% !important;
- padding-right: 80px;
-}
-#contact input:hover {
- transition: border-color 0.3s ease-in-out;
- border: 1px solid rgb(68, 68, 68);
-}
-#contact button {
- outline: none;
- border: none;
- background-color: blue;
- color: white;
- margin: 0 0 5px 40%;
- padding: 10px;
- font-size: 17px;
- width: 150px;
-}
- 
-#contact button:hover {
- background-color: rgba(0, 0, 255, 0.8);
-}
- 
-#contact input:focus {
- outline: 0;
- border: 1px solid red;
-}
- 
 /* mobile responsive mode */
 @media screen and (max-width: 580px)  {
  .row {

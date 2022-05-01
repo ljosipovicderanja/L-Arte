@@ -9,6 +9,7 @@
       <div class="prviinput">
         <label for="email">E-mail :&nbsp;&nbsp;</label>
         <input
+          v-model="email"
           type="email"
           style="border-radius: 20px; background-color: rgb(188, 201, 176)"
         />
@@ -16,16 +17,46 @@
       <div class="prviinput">
         <label for="pass">Lozinka :&nbsp;</label>
         <input
+          v-model="password"
           type="password"
           style="border-radius: 20px; background-color: rgb(188, 201, 176)"
         />
       </div>
       <div class="zapotvrdit">
-        <input type="submit" value="POTVRDI" class="potvrdi" />
+        <input type="buttom" @click="login()" value="POTVRDI" class="potvrdi" />
       </div>
     </div>
   </div>
 </template>
+
+<script>
+import store from "@/store";
+import { firebase } from "@/firebase";
+store.stanje = 0;
+export default {
+  name: "Prijava",
+  data: function () {
+    return {
+      store,
+      email: "",
+      password: "",
+    };
+  },
+  methods: {
+    login () {
+      console.log('Prijava: ' + this.email);
+      console.log(this.$router);
+      firebase.auth().signInWithEmailAndPassword(this.email, this.password).then( (result) => {
+        console.log('Uspješna prijava', result);
+        this.$router.replace({ name: 'Rezervacije'})
+      })
+      .catch(function (e) {
+        console.error('Greška',e);
+      });
+    }
+  }
+};
+</script>
 
 <style>
 .pozadina {
@@ -81,15 +112,3 @@ h1 {
 }
 </style>
 
-<script>
-import store from "@/store";
-store.stanje = 0;
-export default {
-  name: "Prijava",
-  data: function () {
-    return {
-      store,
-    };
-  },
-};
-</script>

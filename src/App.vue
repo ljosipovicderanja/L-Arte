@@ -11,6 +11,8 @@
         <router-link to="/rezervacije">REZERVACIJE</router-link>
         <router-link to="/galerija">GALERIJA</router-link>
         <router-link to="/kontakt">KONTAKT</router-link>
+        <router-link to="#" @click="SignOut()">ODJAVA</router-link>
+        <p class="email">{{store.email}}</p>
         <br />
       </nav>
     </div>
@@ -52,9 +54,16 @@
   top: 0px;
   right: 0px;
 }
+.email {
+  font-weight: 300;
+  color: white;
+  margin-top: 12px;
+}
 </style>
 <script>
 import store from "@/store";
+import { db, firebase } from "@/firebase";
+import router from '@/router';
 
 export default {
   data: function () {
@@ -62,5 +71,53 @@ export default {
       store,
     };
   },
+  methods: {
+    SignOut() {
+			firebase.auth().signOut().then(() =>{
+        store.authenticated = false
+        store.currentUser = null
+				this.$router.push({ path: '/rezervacije' })
+        console.log(store.currentUser)
+			})
+    	},
+  },
+  mounted() {
+      
+      firebase.auth().onAuthStateChanged((user) => {
+        console.log("Mounted current user",store.currentUser)
+
+        const currentRoute = router.currentRoute;
+        if (user) {
+
+          store.authenticated = true
+          console.log("Current user: ", user.email)
+          db.collection("user")
+            .doc(user.email)
+            .get()
+            .then(function(doc) {
+                if (doc.exists) {
+                    const data = doc.data();
+                    
+                    store.email = data.email,
+                    console.log(store.email)
+                } 
+                else {
+                    console.log("Document does not exist!");
+                }
+                })
+                .catch(function(error) {
+                    console.log("Error getting document:", error);
+                });
+                store.currentUser = user.email;
+        } 
+        else {
+            console.log("Korisnik nije prijavljen");
+            store.currentUser = null;
+        if(currentRoute.meta.needsUser){
+            router.push({name:'Rezervacije'});
+        }
+        }
+      });
+  }
 };
 </script>
