@@ -2,6 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Pocetna from '../views/Pocetna.vue'
 
+/*import { FormDatepickerPlugin } from 'bootstrap-vue'
+
+Vue.use(FormDatepickerPlugin)*/
 Vue.use(VueRouter)
 
 const routes = [
@@ -59,6 +62,11 @@ const routes = [
     path: '/vangogh',
     name: 'Vangogh',
     component: () => import('../views/Vangogh.vue')
+  },
+  {
+    path: '/korisnik',
+    name: 'Korisnik',
+    component: () => import('../views/Korisnik.vue')
   }
 ]
 

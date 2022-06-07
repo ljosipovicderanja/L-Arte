@@ -11,8 +11,9 @@
         <router-link to="/rezervacije">REZERVACIJE</router-link>
         <router-link to="/galerija">GALERIJA</router-link>
         <router-link to="/kontakt">KONTAKT</router-link>
-        <router-link to="#" @click="SignOut()">ODJAVA</router-link>
-        <p class="email">{{store.email}}</p>
+        <a href="#" @click.prevent="SignOut()">ODJAVA</a>
+        <p class="email">{{store.currentUser}}</p>
+        <router-link v-if="!store.currentUser" to="/korisnik">Postani korisnik / prijavi se</router-link>
         <br />
       </nav>
     </div>
@@ -73,9 +74,11 @@ export default {
   },
   methods: {
     SignOut() {
+      console.log("Izvrasvanje")
 			firebase.auth().signOut().then(() =>{
-        store.authenticated = false
-        store.currentUser = null
+        
+        store.authenticated = null
+        store.currentUser = false
 				this.$router.push({ path: '/rezervacije' })
         console.log(store.currentUser)
 			})
