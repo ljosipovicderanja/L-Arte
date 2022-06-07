@@ -1,8 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Pocetna from '../views/Pocetna.vue'
-import store from '@/store';
 
+/*import { FormDatepickerPlugin } from 'bootstrap-vue'
+
+Vue.use(FormDatepickerPlugin)*/
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,9 +16,6 @@ const routes = [
   {
     path: '/rezervacije',
     name: 'Rezervacije',
-    meta : {
-      needsUser: true
-    },
     component: () => import('../views/Rezervacije.vue')
   },
   {
@@ -68,11 +67,6 @@ const routes = [
     path: '/korisnik',
     name: 'Korisnik',
     component: () => import('../views/Korisnik.vue')
-  },
-  {
-    path: '/rezervirana_karta',
-    name: 'Rezervirana_karta',
-    component: () => import('../views/Rezervirana_karta.vue')
   }
 ]
 
@@ -83,14 +77,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next)=>{
-  const noUser = store.currentUser === null;
-
-  if (noUser && to.meta.needsUser) {
-    next('prijava')
-  }
-  else {
-    next();
-  }
+  next();
 })
 
 export default router
