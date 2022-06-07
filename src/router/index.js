@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Pocetna from '../views/Pocetna.vue'
+import store from '@/store';
 
 Vue.use(VueRouter)
 
@@ -13,6 +14,9 @@ const routes = [
   {
     path: '/rezervacije',
     name: 'Rezervacije',
+    meta : {
+      needsUser: true
+    },
     component: () => import('../views/Rezervacije.vue')
   },
   {
@@ -59,6 +63,16 @@ const routes = [
     path: '/vangogh',
     name: 'Vangogh',
     component: () => import('../views/Vangogh.vue')
+  },
+  {
+    path: '/korisnik',
+    name: 'Korisnik',
+    component: () => import('../views/Korisnik.vue')
+  },
+  {
+    path: '/rezervirana_karta',
+    name: 'Rezervirana_karta',
+    component: () => import('../views/Rezervirana_karta.vue')
   }
 ]
 
@@ -69,7 +83,14 @@ const router = new VueRouter({
 })
 
 router.beforeEach((to, from, next)=>{
-  next();
+  const noUser = store.currentUser === null;
+
+  if (noUser && to.meta.needsUser) {
+    next('prijava')
+  }
+  else {
+    next();
+  }
 })
 
 export default router

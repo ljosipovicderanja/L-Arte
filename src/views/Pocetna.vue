@@ -58,7 +58,7 @@ body#p1 {
     border-radius: 50%;
 }
 .okrugla-slika1 {
-    background-image: url("../assets/zastart.jpg");;
+    background-image: url("../assets/zastart.jpg");
     background-repeat: no-repeat;
     width: 300px;
     height: 300px;
