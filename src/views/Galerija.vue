@@ -3,23 +3,13 @@
     <br /><br />
     <div class="zagaleriju">
       <div class="prikaz">
-        <div class="img2">
-          <img src="zaslike/slika3.jpg" style="height: 300px" />
+        <label v-if="store.currentUser" class="gumb">
+          <font-awesome-icon icon="fa-solid fa-plus " class="iplus" />
+          <input @change="handlechange" type="file" accept="image/*" />
+        </label>
+        <div v-for="img in images" :key="img" class="img2">
+          <img :src="img" style="height: 300px" />
         </div>
-        <div class="img2">
-          <img src="zaslike/slika4.jpg" style="height: 300px" />
-        </div>
-        <div class="img2">
-          <img src="zaslike/slika5.jpg" style="height: 300px" />
-        </div>
-        <div class="img2">
-          <img src="zaslike/slika6.jpg" style="height: 300px" />
-        </div>
-        <router-link :to="{ name: 'Prijava' }">
-          <div class="gumb">
-            <font-awesome-icon icon="fa-solid fa-plus " class="iplus" />
-          </div>
-        </router-link>
       </div>
     </div>
 
@@ -38,12 +28,12 @@
 
     <div class="zakomentare">
       <div class="spoj1">
-        <div class="purple"></div>
-        <router-link :to="{ name: 'Prijava' }">
-          <div class="dugi1">
-            <input type="text" placeholder="Dodaj komentar..." class="kom" />
-          </div>
-        </router-link>
+        <div v-if="store.currentUser" class="purple"></div>
+
+        <div v-if="store.currentUser" class="dugi1">
+          <input type="text" placeholder="Dodaj komentar..." class="kom" />
+        </div>
+        <div v-else>Ako želiš komentirati prijavi se...</div>
       </div>
       <div class="spoj2">
         <div class="plavi"></div>
@@ -58,7 +48,11 @@
 </template>
 
 
-<style >
+<style>
+input[type="file"] {
+  display: none;
+}
+
 body#p2 {
   background-color: rgba(133, 198, 93, 1);
   padding: 50px;
@@ -70,6 +64,7 @@ body#p2 {
   padding: 20px;
   width: 100%;
   height: 350px;
+  overflow-x: scroll;
 }
 .zakomentare {
   border-radius: 25px;
@@ -99,6 +94,7 @@ body#p2 {
   height: 100px;
   margin-top: 100px;
   margin-left: 40px;
+  cursor: pointer;
 }
 .iplus {
   margin: 42px;
@@ -136,6 +132,7 @@ body#p2 {
 </style>
 
 <script>
+import { storage } from "@/firebase";
 import store from "@/store";
 store.stanje = 0;
 export default {
@@ -143,7 +140,38 @@ export default {
   data: function () {
     return {
       store,
+      image: null,
+      images: [],
     };
+  },
+  methods: {
+    handlechange(event) {
+      this.image = event.target.files[0];
+      const storageref = storage.ref();
+      const imagename = Date.now() + ".png";
+      const imageref = storageref.child(`images/${imagename}`);
+      imageref
+        .put(this.image)
+        .then((snapshot) => {
+          console.log("slika uploadana");
+          imageref.getDownloadURL().then((url) => this.images.unshift(url));
+        })
+        .catch((error) => console.log(error));
+    },
+    fetchimages() {
+      const storageref = storage.ref("images");
+      let array = [];
+      storageref.listAll().then((imagelist) => {
+        imagelist.items.forEach((imageref) => {
+          imageref.getDownloadURL().then((url) => array.push(url));
+        });
+      });
+      this.images = array;
+    },
+  },
+  mounted() {
+    this.fetchimages();
+    console.log(this.images);
   },
 };
 </script>

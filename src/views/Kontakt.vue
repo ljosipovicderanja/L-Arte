@@ -1,24 +1,37 @@
+
 <template>
-  <body id="p1">
-    <div class="about">
-      <br /><br /><br />
-      <h1>This is an KONTAKT page</h1>
-      <p>thrthrhr</p>
-    </div>
+  <body>
+    <div class="wallpaper"><Map /></div>
   </body>
 </template>
 
-<style>
-body#p1 {
-  background-color: blueviolet;
+
+<style scoped>
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: black;
+}
+.wallpaper {
+  background-color: rgb(217, 215, 107);
+  width: 100%;
+  height: 280%;
+  background-attachment: fixed;
+  position: absolute;
 }
 </style>
 
+
+
 <script>
+//import Map from "./components/Map.vue";
 import store from "@/store";
 store.stanje = 0;
+
 export default {
   name: "Kontakt",
+  //  components: {
+  //    Map,
+  //  },
   data: function () {
     return {
       store,
