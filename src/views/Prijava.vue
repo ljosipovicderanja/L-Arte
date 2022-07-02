@@ -23,7 +23,7 @@
         />
       </div>
       <div class="zapotvrdit">
-        <input type="buttom" @click="login()" value="POTVRDI" class="potvrdi" />
+        <input type="button" @click="login()" value="POTVRDI" class="potvrdi" />
       </div>
     </div>
   </div>
